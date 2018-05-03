@@ -9,17 +9,29 @@ import { Exhibitor } from '../exhibitor-data/exhibitor';
   styleUrls: ['./exhibitor.component.css']
 })
 export class ExhibitorComponent implements OnInit {
-  @Input() exhibitor: Exhibitor;
+  @Input() exhibitor: Exhibitor;        // object we recieve
+  private updatedExhibitor: Exhibitor;  // object that will hold the changes until changes are saved
   @Output() saveChanges: EventEmitter<Exhibitor> = new EventEmitter<Exhibitor>();
 
   constructor() { }
 
   ngOnInit() {
-    //console.log(this.exhibitor.personal.firstName);
+    this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
   }
 
+  // emit that we want to save changes
   onSaveChanges() {
-    // store the changes into a Exhibitor object and return it
+    this.exhibitor = this.ghettoDeepCopy(this.updatedExhibitor);
     this.saveChanges.emit(this.exhibitor);
+  }
+
+  // user cancelled changes, restore original values
+  onCancelChanges() {
+    this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
+  }
+
+  // lul...
+  private ghettoDeepCopy(e: Exhibitor): Exhibitor {
+    return JSON.parse(JSON.stringify(e));
   }
 }

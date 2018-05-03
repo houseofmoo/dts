@@ -11,10 +11,10 @@
 
     <div>
       <mat-form-field>
-        <input matInput placeholder="First name" value={{exhibitor.personal.firstName}}>
+        <input matInput placeholder="First name" value={{updatedExhibitor.personal.firstName}} [(ngModel)]="updatedExhibitor.personal.firstName">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Last Name" value={{exhibitor.personal.lastName}}>
+        <input matInput placeholder="Last Name" value={{updatedExhibitor.personal.lastName}} [(ngModel)]="updatedExhibitor.personal.firstName">
       </mat-form-field>
     </div>
 
@@ -34,6 +34,7 @@
       </div>
 
     <mat-action-row>
+      <button mat-button (click)="onCancelChanges()">Cancel changes</button>
       <button mat-button (click)="onSaveChanges()">Save changes</button>
     </mat-action-row>
   </mat-expansion-panel>
