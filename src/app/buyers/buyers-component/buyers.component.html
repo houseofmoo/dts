@@ -1,0 +1,67 @@
+<h3 class="text-center">Buyers</h3>
+
+<mat-accordion multi="true">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        John Moodie
+      </mat-panel-title>
+      <mat-panel-description>
+        <div>
+          Raytheon
+          <a href="mailto:yourgibs@hotmail.com">yourgibs@hotmail.com</a>
+        </div>
+
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="row">
+      <mat-form-field>
+        <input matInput width="fill" placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </div>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create new entry
+      </mat-panel-title>
+      <mat-panel-description>
+        {{panelOpenState ? '' : 'Click to create a new entry'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>A new entry form</p>
+  </mat-expansion-panel>
+</mat-accordion>
