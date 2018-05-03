@@ -5,11 +5,13 @@ import {
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
+  MatButtonModule
 } from '@angular/material';
 
 import { CoreModule } from '../core/core/core.module';
 
 import { ExhibitorsComponent } from './exhibitors-component/exhibitors.component';
+import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
 
 @NgModule({
   imports: [
@@ -21,9 +23,11 @@ import { ExhibitorsComponent } from './exhibitors-component/exhibitors.component
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule
   ],
   declarations: [
-    ExhibitorsComponent
+    ExhibitorsComponent,
+    ExhibitorComponent
   ]
 })
 

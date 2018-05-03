@@ -1,0 +1,40 @@
+<mat-accordion multi="true">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="right-aligned-header">
+      <mat-panel-title>
+        {{exhibitor.personal.firstName}} {{exhibitor.personal.lastName}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{exhibitor.personal.title}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="First name" value={{exhibitor.personal.firstName}}>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" value={{exhibitor.personal.lastName}}>
+      </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="Company Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Company Address">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width: 100%">
+          <textarea matInput placeholder="Company Description"></textarea>
+        </mat-form-field>
+      </div>
+
+    <mat-action-row>
+      <button mat-button (click)="onSaveChanges()">Save changes</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
