@@ -3,18 +3,21 @@
 </h3>
 
 <div class="row">
-  <mat-form-field style="width: 100%">
-    <input matInput placeholder="First Name">
-  </mat-form-field>
-  <mat-form-field style="width: 100%">
-    <input matInput placeholder="Last Name">
-  </mat-form-field>
-  <mat-form-field style="width: 100%">
-    <input matInput placeholder="Comapny">
-  </mat-form-field>
-  <button mat-button>Search</button>
+  <form>
+    <div class="row">
+      <div class="form-group">
+        <input class="form-control" placeholder="First name" />
+        <input class="form-control" placeHolder="Last name" />
+      </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="onSearch()">Search</button>
+        </div>
+      </div>
+  </form>
 </div>
 
-<div *ngFor="let e of exhibitors">
+<div *ngFor="let e of filteredExhibitors">
   <app-exhibitor [exhibitor]="e" (saveChanges)="onSaveChanges($event)"></app-exhibitor>
 </div>

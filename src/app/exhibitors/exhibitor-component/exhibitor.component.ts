@@ -9,8 +9,8 @@ import { Exhibitor } from '../exhibitor-data/exhibitor';
   styleUrls: ['./exhibitor.component.css']
 })
 export class ExhibitorComponent implements OnInit {
-  @Input() exhibitor: Exhibitor;        // object we recieve
-  private updatedExhibitor: Exhibitor;  // object that will hold the changes until changes are saved
+  @Input() exhibitor: Exhibitor;  // object we recieve
+  updatedExhibitor: Exhibitor;    // object that will hold the changes until changes are saved
   @Output() saveChanges: EventEmitter<Exhibitor> = new EventEmitter<Exhibitor>();
 
   constructor() { }
@@ -27,6 +27,8 @@ export class ExhibitorComponent implements OnInit {
 
   // user cancelled changes, restore original values
   onCancelChanges() {
+    console.log(this.updatedExhibitor.company.name);
+    console.log(this.updatedExhibitor.company.address);
     this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
   }
 

@@ -12,6 +12,7 @@ import { CoreModule } from '../core/core/core.module';
 
 import { ExhibitorsComponent } from './exhibitors-component/exhibitors.component';
 import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
+import { ExhibitorService } from './exhibitors-services/exhibitors.services';
 
 @NgModule({
   imports: [
@@ -28,6 +29,9 @@ import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
   declarations: [
     ExhibitorsComponent,
     ExhibitorComponent
+  ],
+  providers: [
+    ExhibitorService
   ]
 })
 
