@@ -27,8 +27,6 @@ export class ExhibitorComponent implements OnInit {
 
   // user cancelled changes, restore original values
   onCancelChanges() {
-    console.log(this.updatedExhibitor.company.name);
-    console.log(this.updatedExhibitor.company.address);
     this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
   }
 

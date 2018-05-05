@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatExpansionModule,
   MatFormFieldModule,
@@ -12,13 +12,16 @@ import { CoreModule } from '../core/core/core.module';
 
 import { ExhibitorsComponent } from './exhibitors-component/exhibitors.component';
 import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
-import { ExhibitorService } from './exhibitors-services/exhibitors.services';
+import { ExhibitorService } from './exhibitors-services/exhibitors.service';
+import { BoothRateService } from './exhibitors-services/booth-rates.service';
+import { ApiConfigs } from '../config/api-configs';
+
 
 @NgModule({
   imports: [
     CoreModule,
     RouterModule.forChild([
-      { path: "exhibitors", component: ExhibitorsComponent }
+      { path: 'exhibitors', component: ExhibitorsComponent }
     ]),
     BrowserAnimationsModule,
     MatExpansionModule,
@@ -28,10 +31,12 @@ import { ExhibitorService } from './exhibitors-services/exhibitors.services';
   ],
   declarations: [
     ExhibitorsComponent,
-    ExhibitorComponent
+    ExhibitorComponent,
   ],
   providers: [
-    ExhibitorService
+    ExhibitorService,
+    BoothRateService,
+    ApiConfigs
   ]
 })
 

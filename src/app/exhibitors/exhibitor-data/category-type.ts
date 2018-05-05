@@ -1,10 +1,9 @@
-export enum CategoryType
-{
-    Repeat,
-    New,
-    HFMA,
-    Comp,
-    Trade,
-    Sponser,
-    Special
+export enum CategoryType {
+  Repeat,
+  New,
+  HFMA,
+  Comp,
+  Trade,
+  Sponser,
+  Special
 }

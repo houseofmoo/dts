@@ -9,5 +9,4 @@ export class BuyersComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
