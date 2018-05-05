@@ -1,11 +1,25 @@
-<div class="container">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button [routerLink]="['/exhibitors']" mat-button>Exhibitors</button>
-      <button [routerLink]="['/buyers']" mat-button>Buyers</button>
-      <button [routerLink]="['/sales-leads']" mat-button>Sale Leads</button>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" [routerLink]="['/sales-leads']">DTS DB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <router-outlet></router-outlet>  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/exhibitors']">Exhibitors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/buyers']">Buyers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/sales-leads']">Sale Leads</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid" style="padding-top: 65px">
+  <router-outlet></router-outlet>
 </div>

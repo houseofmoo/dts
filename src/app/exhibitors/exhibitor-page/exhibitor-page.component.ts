@@ -5,11 +5,11 @@ import { BoothRateService } from '../exhibitors-services/booth-rates.service';
 import { BoothRates } from '../exhibitor-data/booth';
 
 @Component({
-  selector: 'app-exhibitors',
-  templateUrl: './exhibitors.component.html',
-  styleUrls: ['./exhibitors.component.css']
+  selector: 'app-exhibitor-page',
+  templateUrl: './exhibitor-page.component.html',
+  styleUrls: ['./exhibitor-page.component.css']
 })
-export class ExhibitorsComponent implements OnInit {
+export class ExhibitorPageComponent implements OnInit {
   private _exhibitors: Exhibitor[];
   filteredExhibitors: Exhibitor[];
   private _boothRates: BoothRates;
@@ -32,7 +32,6 @@ export class ExhibitorsComponent implements OnInit {
     );
   }
 
-  // linked to exhibitor-component save even
   onExhibitorSaveChanges(exhibitor: Exhibitor) {
     this._exhibitorService.saveExhibitor(exhibitor).subscribe(
       s => { console.log('Saved user' + JSON.stringify(s)); },
@@ -68,11 +67,5 @@ export class ExhibitorsComponent implements OnInit {
     } else {
       this.filteredExhibitors.unshift(newExhibitor);
     }
-  }
-
-  onSaveAllChanges(): void {
-    this.filteredExhibitors.forEach(e => {
-      this.onExhibitorSaveChanges(e);
-    });
   }
 }

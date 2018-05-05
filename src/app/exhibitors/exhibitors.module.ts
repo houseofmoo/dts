@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatExpansionModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule
-} from '@angular/material';
 
 import { CoreModule } from '../core/core/core.module';
 
-import { ExhibitorsComponent } from './exhibitors-component/exhibitors.component';
 import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
+import { ExhibitorPageComponent } from './exhibitor-page/exhibitor-page.component';
+import { ExhibitorCardComponent } from './exhibitor-card/exhibitor-card.component';
+import { ExhibitorFormComponent } from './exhibitor-form/exhibitor-form.component';
 import { ExhibitorService } from './exhibitors-services/exhibitors.service';
 import { BoothRateService } from './exhibitors-services/booth-rates.service';
 import { ApiConfigs } from '../config/api-configs';
@@ -21,17 +17,15 @@ import { ApiConfigs } from '../config/api-configs';
   imports: [
     CoreModule,
     RouterModule.forChild([
-      { path: 'exhibitors', component: ExhibitorsComponent }
+      { path: 'exhibitors', component: ExhibitorPageComponent }
     ]),
     BrowserAnimationsModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
   ],
   declarations: [
-    ExhibitorsComponent,
     ExhibitorComponent,
+    ExhibitorCardComponent,
+    ExhibitorFormComponent,
+    ExhibitorPageComponent,
   ],
   providers: [
     ExhibitorService,

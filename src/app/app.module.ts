@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home-component/home.component';
@@ -28,8 +26,6 @@ import { CoreModule } from './core/core/core.module';
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]),
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatToolbarModule,
     BuyersModule,
     ExhibitorsModule,
     CoreModule.forRoot(),
