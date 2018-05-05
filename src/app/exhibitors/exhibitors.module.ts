@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from '../core/core/core.module';
 
-import { ExhibitorComponent } from './exhibitor-component/exhibitor.component';
 import { ExhibitorPageComponent } from './exhibitor-page/exhibitor-page.component';
 import { ExhibitorCardComponent } from './exhibitor-card/exhibitor-card.component';
 import { ExhibitorFormComponent } from './exhibitor-form/exhibitor-form.component';
@@ -22,7 +21,6 @@ import { ApiConfigs } from '../config/api-configs';
     BrowserAnimationsModule,
   ],
   declarations: [
-    ExhibitorComponent,
     ExhibitorCardComponent,
     ExhibitorFormComponent,
     ExhibitorPageComponent,
