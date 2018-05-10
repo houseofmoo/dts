@@ -1,25 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" [routerLink]="['/sales-leads']">DTS DB</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #366bc1;">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/home']">DTS DB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/exhibitors']">Exhibitors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/buyers']">Buyers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/sales-leads']">Sale Leads</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/exhibitors']">Exhibitors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/buyers']">Buyers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/sales-leads']">Sale Leads</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="container-fluid" style="padding-top: 65px">
+<div class="container" style="padding-top: 65px">
   <router-outlet></router-outlet>
 </div>

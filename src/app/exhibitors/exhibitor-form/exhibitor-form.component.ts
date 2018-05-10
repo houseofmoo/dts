@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Exhibitor } from '../exhibitor-data/exhibitor';
 
 @Component({
@@ -7,26 +7,35 @@ import { Exhibitor } from '../exhibitor-data/exhibitor';
   styleUrls: ['./exhibitor-form.component.css']
 })
 
-export class ExhibitorFormComponent implements OnInit {
+export class ExhibitorFormComponent implements OnInit, OnChanges {
   @Input() exhibitor: Exhibitor;  // object we recieve
-  updatedExhibitor: Exhibitor;    // object that will hold the changes until changes are saved
+  uneditedExhibitor: Exhibitor;   // object that will hold the changes until page is left
   @Output() saveChanges: EventEmitter<Exhibitor> = new EventEmitter<Exhibitor>();
 
   constructor() { }
 
   ngOnInit() {
-    this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
+    this.exhibitor.entryDate = new Date().toLocaleString();
+    this.uneditedExhibitor = this.ghettoDeepCopy(this.exhibitor);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes!');
   }
 
   // emit that we want to save changes
   onSaveChanges() {
-    this.exhibitor = this.ghettoDeepCopy(this.updatedExhibitor);
     this.saveChanges.emit(this.exhibitor);
+  }
+
+  doSomething(newVal: Exhibitor) {
+    // this.exhibitor = newVal;
+    console.log(newVal);
   }
 
   // user cancelled changes, restore original values
   onCancelChanges() {
-    this.updatedExhibitor = this.ghettoDeepCopy(this.exhibitor);
+    this.exhibitor = this.ghettoDeepCopy(this.uneditedExhibitor);
   }
 
   // lul...

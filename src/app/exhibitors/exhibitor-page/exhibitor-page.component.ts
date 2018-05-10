@@ -4,6 +4,19 @@ import { ExhibitorService } from '../exhibitors-services/exhibitors.service';
 import { BoothRateService } from '../exhibitors-services/booth-rates.service';
 import { BoothRates } from '../exhibitor-data/booth';
 
+/*
+Idea: Instead of a search window, we have the form
+the user can start typing into the form
+we begin searching as the user types, but we wait x time (say 500ms)
+before updating the search results.
+As the search results populate the user can either select a search result to view in the form
+or can continue typing to create a new input...
+but how do we tell when the user actually wants to create a new input...
+need to ask nicole what is up
+
+SPLIT up search and enter new record tabs thats how we know if we're entering a new record!
+ */
+
 @Component({
   selector: 'app-exhibitor-page',
   templateUrl: './exhibitor-page.component.html',

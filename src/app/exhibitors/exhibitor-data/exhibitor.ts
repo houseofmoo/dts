@@ -8,7 +8,7 @@ import { Payment, PaymentByYear } from './payment';
 export class Exhibitor {
   id: number;
   controlNumber: string;
-  entryDate: Date;
+  entryDate: string;
 
   firstName: string;
   lastName: string;
@@ -21,7 +21,7 @@ export class Exhibitor {
   product: Products;
   category: CategoryType;
 
-  yearsAttended: Date[];
+  yearsAttended: string[];
 
   hlta: boolean;
   hra: boolean;
@@ -38,7 +38,7 @@ export class Exhibitor {
 
   constructor() {
     this.id = 0;
-    this.entryDate = new Date(Date.now.toString());
+    this.entryDate = new Date().toLocaleString();
     this.company = new Company();
     this.product = new Products();
     this.requiredForms = new RequiredForms();
