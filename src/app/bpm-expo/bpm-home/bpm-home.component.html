@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <div class="row" style="height: 100%; padding-top: 15px; padding-left: 15px">
+      <div class="col-md-2" style="border-right: solid; border-color: #366bc1; border-width: 1px">
+      <h4>BPM</h4>      
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/exhibitors']">Exhibitors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/buyers']">Buyers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/exhibitors']">Other Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/buyers']">Some Other Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/exhibitors']">Other Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/buyers']">Some Other Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/exhibitors']">Other Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/bpm/buyers']">Some Other Item</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-md-10">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

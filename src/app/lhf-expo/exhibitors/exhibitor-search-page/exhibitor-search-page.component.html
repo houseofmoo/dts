@@ -1,0 +1,47 @@
+<div>
+  <h3>Exhibitor</h3>
+  <app-exhibitor-sub-navbar></app-exhibitor-sub-navbar>
+
+  Imagine a search bar here...
+  <button (click)="onSearch()">Search</button>
+  <div *ngIf="!searchResults">
+    No matches found
+  </div>
+  <div *ngIf="searchResults">
+    Match count: {{searchResults.length}}
+  </div>
+
+  <div id="accordion">
+    <div *ngFor="let result of searchResults">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn" style="width: 100%" data-toggle="collapse" attr.data-target="#{{result.id}}" attr.aria-expanded="true" attr.aria-controls="{{result.id}}">
+              <div class=row>
+                <div class="col text-left">
+                  {{result.firstName}} {{result.lastName}}
+                </div>
+                <div class="col text-right">
+                  {{result.email}}
+                </div>
+              </div>
+              <div class=row>
+                <div class="col text-left">
+                  {{result.company.title}} - {{result.company.name}}
+                </div>
+                <div class="col text-right">
+                  {{result.phoneNumber}}
+                </div>
+              </div>
+            </button>
+          </h5>
+        </div>
+
+        <div id={{result.id}} class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <app-exhibitor-form [exhibitor]=result></app-exhibitor-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

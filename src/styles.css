@@ -1,4 +1,9 @@
 
+/* prevent scroll bar from shifting content */
+html {
+  overflow-y: scroll;
+}
+
 /* primary color */
 .bg-primary {
   background: #366bc1;

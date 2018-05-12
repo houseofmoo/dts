@@ -2,7 +2,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiConfigs } from '../../config/api-configs';
 
 @NgModule({
   imports: [
@@ -18,11 +17,4 @@ import { ApiConfigs } from '../../config/api-configs';
   ]
 })
 
-export class CoreModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CoreModule,
-      providers: [ApiConfigs]
-    };
-  }
-}
+export class CoreModule { }
